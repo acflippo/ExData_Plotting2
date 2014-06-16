@@ -1,0 +1,76 @@
+# Codebook
+
+The two data files are contained in the zip file, exdata-data-NEI_data.zip, they are:
+
+- summarySCC_PM25.rds
+- Source_Classification_Code.rds
+
+summarySCC_PM25.rds contains data of the PM2.5 emissions data for the year 1999, 2002, 2005 and 2008.
+For each year, the table contains number of tons of PM2.5 emitted from a specific type of source for the entire year.
+Here are the first few rows.
+
+
+##    fips       SCC Pollutant Emissions  type year
+## 4  09001 10100401  PM25-PRI    15.714 POINT 1999
+## 8  09001 10100404  PM25-PRI   234.178 POINT 1999
+## 12 09001 10100501  PM25-PRI     0.128 POINT 1999
+## 16 09001 10200401  PM25-PRI     2.036 POINT 1999
+## 20 09001 10200504  PM25-PRI     0.388 POINT 1999
+## 24 09001 10200602  PM25-PRI     1.490 POINT 1999
+
+Source_Classification_code.rds contains mapping from the SCC digig strings in the Emissions table to the actual
+name of the PM2.5 source. The source are categorized in a few different ways from more general to more specific.
+
+> head(SCC)
+
+       SCC Data.Category
+1 10100101         Point
+2 10100102         Point
+3 10100201         Point
+4 10100202         Point
+5 10100203         Point
+6 10100204         Point
+                                                                  Short.Name
+1                   Ext Comb /Electric Gen /Anthracite Coal /Pulverized Coal
+2 Ext Comb /Electric Gen /Anthracite Coal /Traveling Grate (Overfeed) Stoker
+3       Ext Comb /Electric Gen /Bituminous Coal /Pulverized Coal: Wet Bottom
+4       Ext Comb /Electric Gen /Bituminous Coal /Pulverized Coal: Dry Bottom
+5                   Ext Comb /Electric Gen /Bituminous Coal /Cyclone Furnace
+6                   Ext Comb /Electric Gen /Bituminous Coal /Spreader Stoker
+                               EI.Sector Option.Group Option.Set               SCC.Level.One
+1 Fuel Comb - Electric Generation - Coal                         External Combustion Boilers
+2 Fuel Comb - Electric Generation - Coal                         External Combustion Boilers
+3 Fuel Comb - Electric Generation - Coal                         External Combustion Boilers
+4 Fuel Comb - Electric Generation - Coal                         External Combustion Boilers
+5 Fuel Comb - Electric Generation - Coal                         External Combustion Boilers
+6 Fuel Comb - Electric Generation - Coal                         External Combustion Boilers
+        SCC.Level.Two               SCC.Level.Three
+1 Electric Generation               Anthracite Coal
+2 Electric Generation               Anthracite Coal
+3 Electric Generation Bituminous/Subbituminous Coal
+4 Electric Generation Bituminous/Subbituminous Coal
+5 Electric Generation Bituminous/Subbituminous Coal
+6 Electric Generation Bituminous/Subbituminous Coal
+                                 SCC.Level.Four Map.To Last.Inventory.Year Created_Date
+1                               Pulverized Coal     NA                  NA             
+2             Traveling Grate (Overfeed) Stoker     NA                  NA             
+3 Pulverized Coal: Wet Bottom (Bituminous Coal)     NA                  NA             
+4 Pulverized Coal: Dry Bottom (Bituminous Coal)     NA                  NA             
+5             Cyclone Furnace (Bituminous Coal)     NA                  NA             
+6             Spreader Stoker (Bituminous Coal)     NA                  NA             
+  Revised_Date Usage.Notes
+
+# Instructions
+
+In the same directory, download all 7 R files:
+
+1. ExData_project2.R - download and unzip datafiles if they don't already exist 
+     and read it the data into NEI and SCC data frame
+2. plot1.R - creates plot1.png to answer question 1
+3. plot2.R - creates plot2.png to answer question 2
+4. plot3.R - creates plot3.png to answer question 3
+5. plot4.R - creates plot4.png to answer question 4
+6. plot5.R - creates plot5.png to answer question 5
+7. plot6.R - creates plot6.png to answer question 6
+
+All the plot(x).R will source ExData_project2.R to download (if required) and read the data into a data frame.
